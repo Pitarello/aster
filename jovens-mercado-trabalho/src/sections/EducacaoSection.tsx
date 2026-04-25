@@ -66,7 +66,7 @@ export function EducacaoSection({ data }: Props) {
                   <tr key={row.escolaridade}>
                     <td style={{ color: '#e2e8f0', padding: '8px', borderBottom: '1px solid #334155' }}>{row.escolaridade}</td>
                     {TIPOS.map(tipo => {
-                      const val = (row as Record<string, number>)[tipo];
+                      const val = (row as unknown as Record<string, number>)[tipo];
                       const opacity = val / 100;
                       return (
                         <td key={tipo} style={{
