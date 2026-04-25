@@ -22,7 +22,7 @@ export function EmpregoSection({ data }: Props) {
               <Tooltip
                 contentStyle={{ background: '#0f172a', border: '1px solid #334155', borderRadius: 8 }}
                 labelStyle={{ color: '#f1f5f9' }}
-                formatter={(v: number) => `${v}%`}
+                formatter={(v) => `${Number(v)}%`}
               />
               <Legend wrapperStyle={{ fontSize: 12, color: '#94a3b8' }} />
               <Bar dataKey="desemprego" name="Desemprego" fill="#ef4444" radius={[4, 4, 0, 0]} />
@@ -40,7 +40,7 @@ export function EmpregoSection({ data }: Props) {
               <Tooltip
                 contentStyle={{ background: '#0f172a', border: '1px solid #334155', borderRadius: 8 }}
                 labelStyle={{ color: '#f1f5f9' }}
-                formatter={(v: number) => `${v}%`}
+                formatter={(v) => `${Number(v)}%`}
               />
               <Line type="monotone" dataKey="informalidade" name="Informalidade" stroke="#f59e0b" strokeWidth={2} dot={{ r: 4 }} />
             </LineChart>

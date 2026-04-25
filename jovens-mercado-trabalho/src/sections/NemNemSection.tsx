@@ -19,7 +19,7 @@ export function NemNemSection({ data }: Props) {
             <Tooltip
               contentStyle={{ background: '#0f172a', border: '1px solid #334155', borderRadius: 8 }}
               labelStyle={{ color: '#f1f5f9' }}
-              formatter={(v: number) => `${v}%`}
+              formatter={(v) => `${Number(v)}%`}
             />
             <Legend wrapperStyle={{ fontSize: 12, color: '#94a3b8' }} />
             <Bar dataKey="masculino" name="Masculino" fill="#60a5fa" radius={[4, 4, 0, 0]} />

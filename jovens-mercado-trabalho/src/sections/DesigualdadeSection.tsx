@@ -38,7 +38,7 @@ export function DesigualdadeSection({ data }: Props) {
               <YAxis tick={{ fill: '#94a3b8', fontSize: 11 }} unit="%" />
               <Tooltip
                 contentStyle={{ background: '#0f172a', border: '1px solid #334155', borderRadius: 8 }}
-                formatter={(v: number) => `${v}%`}
+                formatter={(v) => `${Number(v)}%`}
               />
               <Bar dataKey="desemprego" name="Desemprego" radius={[4, 4, 0, 0]}>
                 {data.desigualdadeRaca.map(d => (

@@ -39,7 +39,7 @@ export function EducacaoSection({ data }: Props) {
               <YAxis type="category" dataKey="escolaridade" tick={{ fill: '#94a3b8', fontSize: 11 }} width={120} />
               <Tooltip
                 contentStyle={{ background: '#0f172a', border: '1px solid #334155', borderRadius: 8 }}
-                formatter={(v: number) => `${v}%`}
+                formatter={(v) => `${Number(v)}%`}
               />
               <Bar dataKey="taxa" name="Ocupação" radius={[0, 4, 4, 0]}>
                 {data.ocupacaoPorEscolaridade.map((_, i) => (
@@ -66,7 +66,7 @@ export function EducacaoSection({ data }: Props) {
                   <tr key={row.escolaridade}>
                     <td style={{ color: '#e2e8f0', padding: '8px', borderBottom: '1px solid #334155' }}>{row.escolaridade}</td>
                     {TIPOS.map(tipo => {
-                      const val = row[tipo] as number;
+                      const val = (row as Record<string, number>)[tipo];
                       const opacity = val / 100;
                       return (
                         <td key={tipo} style={{

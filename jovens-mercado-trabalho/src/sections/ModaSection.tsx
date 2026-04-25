@@ -55,7 +55,7 @@ export function ModaSection({ data }: Props) {
               <Tooltip
                 contentStyle={{ background: '#0f172a', border: '1px solid #334155', borderRadius: 8 }}
                 labelStyle={{ color: '#f1f5f9' }}
-                formatter={(v: number) => `${v}%`}
+                formatter={(v) => `${Number(v)}%`}
               />
               <Legend wrapperStyle={{ fontSize: 12, color: '#94a3b8' }} />
               <Bar dataKey="formal" name="Formal" fill="#22c55e" stackId="a" radius={[0, 0, 0, 0]} />
@@ -74,7 +74,7 @@ export function ModaSection({ data }: Props) {
               <Tooltip
                 contentStyle={{ background: '#0f172a', border: '1px solid #334155', borderRadius: 8 }}
                 labelStyle={{ color: '#f1f5f9' }}
-                formatter={(v: number, name: string) => name === 'Empregos' ? v.toLocaleString('pt-BR') : `${v}%`}
+                formatter={(v, name) => name === 'Empregos' ? Number(v).toLocaleString('pt-BR') : `${Number(v)}%`}
               />
               <Legend wrapperStyle={{ fontSize: 12, color: '#94a3b8' }} />
               <Line yAxisId="left" type="monotone" dataKey="empregos" name="Empregos" stroke="#a78bfa" strokeWidth={2} dot={{ r: 4 }} />
@@ -96,7 +96,7 @@ export function ModaSection({ data }: Props) {
               <Tooltip
                 contentStyle={{ background: '#0f172a', border: '1px solid #334155', borderRadius: 8 }}
                 labelStyle={{ color: '#f1f5f9' }}
-                formatter={(v: number) => `${v}%`}
+                formatter={(v) => `${Number(v)}%`}
               />
               <Legend wrapperStyle={{ fontSize: 12, color: '#94a3b8' }} />
               <Bar dataKey="formal" name="Formal" fill="#22c55e" stackId="a" />
@@ -163,8 +163,8 @@ export function ModaSection({ data }: Props) {
               <YAxis type="category" dataKey="funcao" tick={{ fill: '#94a3b8', fontSize: 11 }} width={130} />
               <Tooltip
                 contentStyle={{ background: '#0f172a', border: '1px solid #334155', borderRadius: 8 }}
-                formatter={(v: number, name: string) => [
-                  name === 'jovens' ? v.toLocaleString('pt-BR') + ' pessoas' : `${v}%`,
+                formatter={(v, name) => [
+                  name === 'jovens' ? Number(v).toLocaleString('pt-BR') + ' pessoas' : `${Number(v)}%`,
                   name === 'jovens' ? 'Jovens' : 'Informalidade',
                 ]}
               />
@@ -221,8 +221,8 @@ export function ModaSection({ data }: Props) {
               <Tooltip
                 contentStyle={{ background: '#0f172a', border: '1px solid #334155', borderRadius: 8 }}
                 labelStyle={{ color: '#f1f5f9' }}
-                formatter={(v: number, name: string) => [
-                  name === 'percentual' ? `${v}%` : `R$ ${v.toLocaleString('pt-BR')}`,
+                formatter={(v, name) => [
+                  name === 'percentual' ? `${Number(v)}%` : `R$ ${Number(v).toLocaleString('pt-BR')}`,
                   name === 'percentual' ? 'Participação' : 'Renda média',
                 ]}
               />

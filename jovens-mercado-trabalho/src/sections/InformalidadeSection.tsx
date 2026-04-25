@@ -18,7 +18,7 @@ export function InformalidadeSection({ data }: Props) {
           <Tooltip
             contentStyle={{ background: '#0f172a', border: '1px solid #334155', borderRadius: 8 }}
             labelStyle={{ color: '#f1f5f9' }}
-            formatter={(v: number) => `${v}%`}
+            formatter={(v) => `${Number(v)}%`}
           />
           <Legend wrapperStyle={{ fontSize: 12, color: '#94a3b8' }} />
           <Bar dataKey="formal" name="Formal" fill="#22c55e" radius={[4, 4, 0, 0]} stackId="a" />
